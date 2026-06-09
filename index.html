@@ -51,14 +51,12 @@
         </section>
         
         <section class="bg-slate-900 border border-slate-800 p-6 rounded-2xl shadow-sm flex flex-col justify-between">
-    
     <div class="flex justify-between items-center mb-4">
         <h2 class="text-lg font-bold text-slate-200">💬 실시간 익명 광장</h2>
-        <span class="text-xs text-indigo-400">익명_ZFPK</span>
+        <span id="userBadge" class="text-xs text-indigo-400"></span>
     </div>
 
-    <div id="chatMessages" class="flex-1 overflow-y-auto mb-4 space-y-2">
-        </div>
+    <div id="chatMessages" class="flex-1 overflow-y-auto mb-4 space-y-2"></div>
 
     <div class="flex gap-2">
         <input id="messageInput" type="text" 
@@ -90,12 +88,22 @@
         document.getElementById('userBadge').innerText = myUsername;
 
         // DOM 원소들
-        const inputText = document.getElementById('inputText');
-        const outputContainer = document.getElementById('outputContainer');
-        const btnEnToKo = document.getElementById('btnEnToKo');
-        const btnKoToEn = document.getElementById('btnKoToEn');
-        const chatMessages = document.getElementById('chatMessages');
-        const chatInput = document.getElementById('chatInput');
+        // [스크립트 부분] DOM 요소들 다시 정의 (id 일치 확인!)
+const inputText = document.getElementById('inputText');
+const outputContainer = document.getElementById('outputContainer');
+const btnEnToKo = document.getElementById('btnEnToKo');
+const btnKoToEn = document.getElementById('btnKoToEn');
+const chatMessages = document.getElementById('chatMessages');
+const chatInput = document.getElementById('messageInput'); // 수정: messageInput으로 변경
+const sendBtn = document.getElementById('sendBtn');       // 추가: 전송 버튼 연결
+
+// 전송 버튼 이벤트 추가
+sendBtn.addEventListener('click', sendChatMessage);
+
+// 엔터키 입력 시 전송 기능 추가
+chatInput.addEventListener('keypress', (e) => {
+    if (e.key === 'Enter') sendChatMessage();
+});
 
         // ==========================================
         // 2. 한영 오타 변환기 로직
