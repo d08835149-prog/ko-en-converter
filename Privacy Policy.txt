@@ -1,0 +1,11 @@
+Privacy Policy
+
+This service prioritizes the protection of users' personal information.
+
+Information Collected: This service provides a real-time anonymous chat function and does not collect any information that can identify an individual, such as users' names, email addresses, or IP addresses.
+
+Data Processing: Chat messages are stored in the database in real-time; however, they are processed anonymously and are not linked to any personal information.
+
+Retention Period: Chat data is temporarily stored for service operations and is deleted either directly by the user or automatically in accordance with system policy.
+
+Inquiries: For inquiries regarding personal information, please contact [d08835149@gmail.com].
